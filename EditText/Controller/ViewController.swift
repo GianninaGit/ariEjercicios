@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  EditText
-//
-//  Created by Giannina on 8/2/23.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -19,48 +12,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var convertButtonLabel: UIButton!
     @IBOutlet weak var resetButtonLabel: UIButton!
     
-    
-    var textBrain = TextBrain()
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bonusTitleLabel.text = "BONUS!"
+        minusculaTitleLabel.text = "Texto en minúscula:"
+        mayusculaTitleLabel.text = "Texto en mayúscula:"
+        convertButtonLabel.setTitle("Convertir", for: .normal)
+        resetButtonLabel.setTitle("Resetear", for: .normal)
+        updateUI()
+    }
+
+    var textBrain = TextBrain(palabra: "")
     
     @IBAction func convertButtonPressed(_ sender: UIButton) {
-        // 3) Al apretar el botón, quiero que cambien los Labels con un texto (variable nuevoTexto hardcodeada y dsp el texto ingresado por el usuario)
-        bonusLabel.text = textBrain.aBonus(unaPalabra: inputTextLabel.text!)
-        minusculaLabel.text = textBrain.aMinuscula(unaPalabra: inputTextLabel.text!)
-        mayusculaLabel.text = textBrain.aMayuscula(unaPalabra: inputTextLabel.text!)
-        print(textBrain.aMinuscula(unaPalabra: inputTextLabel.text!)+"wiwiw")
+        updateUI()
     }
     
     @IBAction func resetButtonPressed(_ sender: UIButton) {
-        // 4) Al apretar el botón, quiero que cambien los Labels como eran al principio
-        bonusLabel.text = textBrain.updateTextBonus()
-        minusculaLabel.text = textBrain.updateTextMinuscula()
-        mayusculaLabel.text = textBrain.updateTextMayuscula()
-        inputTextLabel.text = ""
-
+        inputTextLabel.text! = ""
+        updateUI()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // 1) Al abrir la app quiero ver esto:
-        // 2) Pasarlo a model
-        bonusTitleLabel.text = textBrain.updateTituloBonus()
-        minusculaTitleLabel.text = textBrain.updateTituloMinuscula()
-        mayusculaTitleLabel.text = textBrain.updateTituloMayuscula()
-        convertButtonLabel.setTitle(textBrain.updateTituloConvertButton(), for: .normal)
-        resetButtonLabel.setTitle(textBrain.updateTituloResetButton(), for: .normal)
-
-        bonusLabel.text = textBrain.updateTextBonus()
-        minusculaLabel.text = textBrain.updateTextMinuscula()
-        mayusculaLabel.text = textBrain.updateTextMayuscula()
-        
-        
-        
-        
-        
+    func updateUI() {
+        if inputTextLabel.text! != "" {
+            textBrain.setPalabra(unaPalabraRecibida: inputTextLabel.text!)
+            bonusLabel.text = textBrain.aBonus()
+            minusculaLabel.text = textBrain.aMinuscula()
+            mayusculaLabel.text = textBrain.aMayuscula()
+        } else {
+            bonusLabel.text = "Aquí aparecerá el bonus"
+            minusculaLabel.text = "Aquí aparecerá el texto en minúscula"
+            mayusculaLabel.text = "Aquí aparecerá el texto en mayúscula"
+        }
     }
-
-
 }
 
