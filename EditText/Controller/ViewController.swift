@@ -10,7 +10,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mayusculaLabel: UILabel!
     @IBOutlet weak var inputTextLabel: UITextField!
     @IBOutlet weak var convertButtonLabel: UIButton!
-    @IBOutlet weak var resetButtonLabel: UIButton!
+    
+    var textBrain = TextBrain(palabra: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,33 +19,19 @@ class ViewController: UIViewController {
         minusculaTitleLabel.text = "Texto en minúscula:"
         mayusculaTitleLabel.text = "Texto en mayúscula:"
         convertButtonLabel.setTitle("Convertir", for: .normal)
-        resetButtonLabel.setTitle("Resetear", for: .normal)
+ 
         updateUI()
-    }
+    } 
 
-    var textBrain = TextBrain(palabra: "")
-
-    
     @IBAction func convertButtonPressed(_ sender: UIButton) {
-        updateUI()
-    }
-    
-    @IBAction func resetButtonPressed(_ sender: UIButton) {
-        inputTextLabel.text! = ""
+        textBrain.setPalabra(unaPalabraRecibida: inputTextLabel.text!)
         updateUI()
     }
     
     func updateUI() {
-        if inputTextLabel.text! != "" {
-            textBrain.setPalabra(unaPalabraRecibida: inputTextLabel.text!)
             bonusLabel.text = textBrain.aBonus()
             minusculaLabel.text = textBrain.aMinuscula()
             mayusculaLabel.text = textBrain.aMayuscula()
-        } else {
-            bonusLabel.text = "Aquí aparecerá el bonus"
-            minusculaLabel.text = "Aquí aparecerá el texto en minúscula"
-            mayusculaLabel.text = "Aquí aparecerá el texto en mayúscula"
-        }
     }
 }
 

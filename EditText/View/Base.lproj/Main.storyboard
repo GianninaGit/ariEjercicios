@@ -59,15 +59,6 @@
                                     <action selector="convertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nbd-hG-qI1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ez0-mV-v4u">
-                                <rect key="frame" x="42" y="706" width="309" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="scN-YP-rRh"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kk2-zi-5l8">
                                 <rect key="frame" x="42" y="281" width="309" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,7 +86,6 @@
                         <outlet property="mayusculaTitleLabel" destination="CR7-ML-eA4" id="Osp-Jj-uA2"/>
                         <outlet property="minusculaLabel" destination="4Fb-8b-jnJ" id="qF4-dx-a0C"/>
                         <outlet property="minusculaTitleLabel" destination="kk2-zi-5l8" id="uEq-nT-4m3"/>
-                        <outlet property="resetButtonLabel" destination="ez0-mV-v4u" id="8nc-vu-QAZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
