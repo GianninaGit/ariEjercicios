@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     }
 
     var textBrain = TextBrain(palabra: "")
+
     
     @IBAction func convertButtonPressed(_ sender: UIButton) {
         updateUI()
