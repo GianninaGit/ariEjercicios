@@ -10,6 +10,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mayusculaLabel: UILabel!
     @IBOutlet weak var inputTextLabel: UITextField!
     @IBOutlet weak var convertButtonLabel: UIButton!
+    @IBOutlet weak var resetButtonLabel: UIButton!
     
     var textBrain = TextBrain(palabra: "")
     
@@ -19,12 +20,18 @@ class ViewController: UIViewController {
         minusculaTitleLabel.text = "Texto en minúscula:"
         mayusculaTitleLabel.text = "Texto en mayúscula:"
         convertButtonLabel.setTitle("Convertir", for: .normal)
- 
+        resetButtonLabel.setTitle("Resetear", for: .normal)
+        
         updateUI()
     } 
 
     @IBAction func convertButtonPressed(_ sender: UIButton) {
         textBrain.setPalabra(unaPalabraRecibida: inputTextLabel.text!)
+        updateUI()
+    }
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
+        textBrain.setPalabra(unaPalabraRecibida: "")
+        inputTextLabel.text? = "" //es lo mismo que .removeAll()
         updateUI()
     }
     
