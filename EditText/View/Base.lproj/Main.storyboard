@@ -73,6 +73,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjD-bI-znO">
+                                <rect key="frame" x="159" y="716" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpG-Hw-fbE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,6 +95,7 @@
                         <outlet property="mayusculaTitleLabel" destination="CR7-ML-eA4" id="Osp-Jj-uA2"/>
                         <outlet property="minusculaLabel" destination="4Fb-8b-jnJ" id="qF4-dx-a0C"/>
                         <outlet property="minusculaTitleLabel" destination="kk2-zi-5l8" id="uEq-nT-4m3"/>
+                        <outlet property="resetButtonLabel" destination="hjD-bI-znO" id="yrd-ib-zMH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
